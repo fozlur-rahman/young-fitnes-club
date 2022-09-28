@@ -5,6 +5,7 @@ import './Home.css';
 
 const Home = () => {
     const [exercises, setExercises] = useState([]);
+    const [cart, setCart] = useState([]);
 
     useEffect(() => {
         fetch('exercises.json')
@@ -12,25 +13,34 @@ const Home = () => {
             .then(data => setExercises(data));
     }, [])
 
+    const handleAddToCart = (selectExercise) => {
+        // console.log(selectExercise);
+        let newCart = [];
+        setCart(newCart);
+    }
+
     return (
         <div className="home-container">
             <div className='exercises-container'>
                 <div className='exercises-header'>
                     <h2>Young Fitness Club</h2>
-                    <p>Select today’s exercise</p>
+                    <p>Select todays exercise</p>
                 </div>
                 <div className='exercises'>
                     {
                         exercises.map(exercise => <Exercise
                             exercise={exercise}
                             key={exercise.id}
+                            handleAddToCart={handleAddToCart}
 
                         ></Exercise>)
                     }
                 </div>
             </div>
             <div className='cart-container'>
-                <Cart></Cart>
+                <Cart
+                    cart={cart}
+                ></Cart>
             </div>
         </div>
     );

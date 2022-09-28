@@ -1,8 +1,8 @@
 import React from 'react';
 import './Exercise.css'
 
-const Exercises = ({ exercise }) => {
-    console.log(exercise);
+const Exercises = ({ exercise, handleAddToCart }) => {
+    // console.log(exercise);
     const { name, img, time } = exercise;
     return (
 
@@ -10,7 +10,8 @@ const Exercises = ({ exercise }) => {
             <img src={img} alt="" />
             <h3>{name}</h3>
             <p>Time: {time} s</p>
-            <button className='add-btn'>Add To List</button>
+            <button onClick={() => handleAddToCart(exercise)} className='add-btn' >
+                Add To List</button>
 
         </div>
     );
