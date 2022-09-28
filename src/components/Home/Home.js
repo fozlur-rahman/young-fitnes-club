@@ -1,21 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import Cart from '../Cart/Cart';
-import Events from '../Events/Events';
+import Exercise from '../Exercise/Exercise';
 import './Home.css';
 
 const Home = () => {
-    const [evnets, setEvents] = useState([]);
+    const [exercises, setExercises] = useState([]);
 
     useEffect(() => {
-        fetch('events.json')
+        fetch('exercises.json')
             .then(res => res.json())
-            .then(data => console.log(data));
+            .then(data => setExercises(data));
     }, [])
 
     return (
         <div className="home-container">
-            <Events></Events>
-            <Cart></Cart>
+            <div className='exercises-container'>
+                <div className='exercises-header'>
+                    <h2>Young Fitness Club</h2>
+                    <p>Select today’s exercise</p>
+                </div>
+                <div className='exercises'>
+                    {
+                        exercises.map(exercise => <Exercise
+                            exercise={exercise}
+                            key={exercise.id}
+
+                        ></Exercise>)
+                    }
+                </div>
+            </div>
+            <div className='cart-container'>
+                <Cart></Cart>
+            </div>
         </div>
     );
 };
