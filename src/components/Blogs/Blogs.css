@@ -1,0 +1,21 @@
+.blogs-container{
+    background: #F2F4FA;
+    margin-top: 50px;
+    padding: 25px 0;
+    text-align: left;
+}
+.blogs{
+    width: 95%;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+.blog {
+    margin: 10px auto;
+    padding: 25px;
+    color: gray !important;
+    background: white;
+    text-align: justify;
+    border-radius: 5px;
+}
