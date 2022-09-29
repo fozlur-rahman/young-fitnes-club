@@ -45,18 +45,18 @@ const Cart = ({ cart }) => {
             </div>
 
             <div className='add-brack'>
-                <h3 >Add A Break</h3>
+                <h3>Add A Break</h3>
                 <div className='add-brack-btns'>
-                    <button onClick={() => addBreakTime(5)} >5m</button>
-                    <button onClick={() => addBreakTime(10)} >10m</button>
-                    <button onClick={() => addBreakTime(15)}>15m</button>
-                    <button onClick={() => addBreakTime(20)}>20m</button>
-                    <button onClick={() => addBreakTime(30)}>30m</button>
+                    <button onClick={() => addBreakTime(2)} > 2m </button>
+                    <button onClick={() => addBreakTime(5)} >5m </button>
+                    <button onClick={() => addBreakTime(8)}> 8m </button>
+                    <button onClick={() => addBreakTime(10)}>10m </button>
+                    <button onClick={() => addBreakTime(15)}> 15m </button>
                 </div>
             </div>
 
             <div className='exercise-details'>
-                <h3>Exercise Details</h3>
+                <h3 >Exercise Details</h3>
                 <div className='exercise-times'>
                     <p>Exercise Times: {totalTimes} m</p>
                 </div>

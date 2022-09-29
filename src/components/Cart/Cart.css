@@ -1,3 +1,10 @@
+span {
+    color: gray;
+}
+h3,p{
+    color: rgb(58, 58, 58);
+}
+
 .cart-container{
     background: #F2F4FA;
     padding: 20px;
@@ -26,7 +33,12 @@
 }
 
 
-
+.exercise-details {
+    text-align: left;
+}
+.add-brack {
+    text-align: left;
+}
 .exercise-times,.break-times {
     background: white;
     padding: 1px 25px;
@@ -62,4 +74,9 @@
     background: #F2F4FA;
     cursor: pointer;
     
+}
+.add-brack-btns button:hover{
+background: #5D5FEF;
+transition: .3s;
+color: white !important;
 }
