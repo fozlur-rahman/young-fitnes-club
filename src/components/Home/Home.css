@@ -26,3 +26,22 @@ color: #5D5FEF;
     grid-gap: 20px;
 
 }
+
+/* responsive for table and mobile  */
+
+@media screen and (max-width: 768px){
+    .home-container{
+        display: block;
+    }
+
+    .exercises {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px){
+    .exercises{
+        display: block;
+    }
+}
