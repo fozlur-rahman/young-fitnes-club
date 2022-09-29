@@ -1,8 +1,9 @@
 .exercise{
     padding: 15px;
-    background: rgb(248, 246, 246);
+    background: #F2F4FA;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px lightslategrey;
+    text-align: left;
+    /* box-shadow: 0px 0px 10px lightslategrey; */
 }
 .exercise img{
     width: 100%;

@@ -9,7 +9,7 @@ const Exercises = ({ exercise, handleAddToCart }) => {
         <div className='exercise'>
             <img src={img} alt="" />
             <h3>{name}</h3>
-            <p>Time: {time} s</p>
+            <p>Time: {time} minutes</p>
             <button onClick={() => handleAddToCart(exercise)} className='add-btn' >
                 Add To List</button>
 

@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 import './Cart.css';
 import user from '../../images/271617923_443961623926763_3670655282439181725_n (2)-PhotoRoom.png';
 
 const Cart = ({ cart }) => {
-    console.log(cart)
+
+    const [times, setTime] = useState([]);
+    console.log(cart);
+    let totalTimes = 0;
+    let breakTime = 0;
+    for (const exercise of cart) {
+        totalTimes = totalTimes + exercise.time;
+    }
+
+    const addBreakTime = (getTime) => {
+        let newTime = [...times, getTime];
+        setTime(newTime);
+    }
+
+    for (const time of times) {
+        breakTime = time;
+    }
+
+    const handleComplete = () => toast("Yeah! Activity Completed");
     return (
         <div className='cart-container'>
             <div className='user'>
@@ -26,19 +45,27 @@ const Cart = ({ cart }) => {
             </div>
 
             <div className='add-brack'>
-                <h3>Add A Break</h3>
+                <h3 >Add A Break</h3>
+                <div className='add-brack-btns'>
+                    <button onClick={() => addBreakTime(5)} >5m</button>
+                    <button onClick={() => addBreakTime(10)} >10m</button>
+                    <button onClick={() => addBreakTime(15)}>15m</button>
+                    <button onClick={() => addBreakTime(20)}>20m</button>
+                    <button onClick={() => addBreakTime(30)}>30m</button>
+                </div>
             </div>
 
             <div className='exercise-details'>
                 <h3>Exercise Details</h3>
                 <div className='exercise-times'>
-                    <p>Exercise Times <span>100s</span></p>
+                    <p>Exercise Times: {totalTimes} m</p>
                 </div>
                 <div className='break-times'>
-                    <p>Break Times <span>100s</span></p>
+                    <p>Break Times : {breakTime} m</p>
                 </div>
 
-                <button className='activity-btn'>Activity Complete</button>
+                <button onClick={handleComplete} className='activity-btn'>Activity Complete</button>
+                <ToastContainer></ToastContainer>
             </div>
         </div>
     );

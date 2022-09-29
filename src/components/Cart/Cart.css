@@ -25,15 +25,13 @@
     margin: 0;
 }
 
-.add-brack{
-    background: white;
-    padding: 20px 0;
-}
+
 
 .exercise-times,.break-times {
     background: white;
-    padding: 5px;
+    padding: 1px 25px;
     border-radius: 5px;
+    text-align: left;
 }
 .break-times{
     margin-top: 20px;
@@ -47,4 +45,21 @@
     border: 0;
     border-radius: 5px;
     font-size: 16px;
+}
+.add-brack-btns {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    padding: 15px 0 ;
+    border-radius: 5px;
+
+}
+.add-brack-btns button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 0;
+    background: #F2F4FA;
+    cursor: pointer;
+    
 }
